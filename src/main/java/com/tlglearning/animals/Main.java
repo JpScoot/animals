@@ -1,30 +1,17 @@
 package com.tlglearning.animals;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class Main {
 
   public static void main(String[] args) {
-    List<Wolf> wolves = new ArrayList<>();
-    wolves.add(new Wolf());
-    wolves.add(new Wolf());
-    wolves.add(new Wolf());
-    wolves.add(new Dog());
-    wolves.add(new Dog());
-    wolves.add(new Dog());
-    Collections.shuffle(wolves);
-    for (Wolf w : wolves) {
-      System.out.println();
-      System.out.println(w.getClass().getName());
-      w.hunt();
-      w.vocalize();
-      if (w instanceof Dog) {
-        Dog d = (Dog) w;
-        d.rollOver();
-      }
-    }
+    new Dog();
+    /*
+    0. class initialization of Wolf superclass (Object) - object is already in memory
+    1. class initialization of Wolf
+    2. class initialization of Dog
+    (2a). Object's initialization of Dog instance
+    3. Wolf's initialization of Dog instance
+    4. Dog's initialization of Dog instance
+     */
   }
 
 }
